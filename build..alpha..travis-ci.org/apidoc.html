@@ -1,0 +1,855 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/epoberezkin/ajv"
+
+    >ajv (v4.11.5)</a>
+</h1>
+<h4>Another JSON Schema Validator</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ajv">module ajv</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.ValidationError">
+            function <span class="apidocSignatureSpan">ajv.</span>ValidationError
+            <span class="apidocSignatureSpan">(errors)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.cache">
+            function <span class="apidocSignatureSpan">ajv.</span>cache
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ajv.</span>ValidationError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ajv.</span>async</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ajv.</span>cache.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ajv.</span>keyword</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ajv.</span>v5</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ajv.ValidationError">module ajv.ValidationError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.ValidationError.ValidationError">
+            function <span class="apidocSignatureSpan">ajv.</span>ValidationError
+            <span class="apidocSignatureSpan">(errors)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ajv.ValidationError.prototype">module ajv.ValidationError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.ValidationError.prototype.constructor">
+            function <span class="apidocSignatureSpan">ajv.ValidationError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(errors)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ajv.async">module ajv.async</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.async.compile">
+            function <span class="apidocSignatureSpan">ajv.async.</span>compile
+            <span class="apidocSignatureSpan">(schema, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.async.setup">
+            function <span class="apidocSignatureSpan">ajv.async.</span>setup
+            <span class="apidocSignatureSpan">(opts, required)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ajv.cache">module ajv.cache</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.cache.cache">
+            function <span class="apidocSignatureSpan">ajv.</span>cache
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ajv.cache.prototype">module ajv.cache.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.cache.prototype.clear">
+            function <span class="apidocSignatureSpan">ajv.cache.prototype.</span>clear
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.cache.prototype.del">
+            function <span class="apidocSignatureSpan">ajv.cache.prototype.</span>del
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.cache.prototype.get">
+            function <span class="apidocSignatureSpan">ajv.cache.prototype.</span>get
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.cache.prototype.put">
+            function <span class="apidocSignatureSpan">ajv.cache.prototype.</span>put
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ajv.keyword">module ajv.keyword</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.keyword.add">
+            function <span class="apidocSignatureSpan">ajv.keyword.</span>add
+            <span class="apidocSignatureSpan">(keyword, definition)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.keyword.get">
+            function <span class="apidocSignatureSpan">ajv.keyword.</span>get
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.keyword.remove">
+            function <span class="apidocSignatureSpan">ajv.keyword.</span>remove
+            <span class="apidocSignatureSpan">(keyword)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ajv.v5">module ajv.v5</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ajv.v5.enable">
+            function <span class="apidocSignatureSpan">ajv.v5.</span>enable
+            <span class="apidocSignatureSpan">(ajv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ajv.v5.</span>META_SCHEMA_ID</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ajv" id="apidoc.module.ajv">module ajv</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.ValidationError" id="apidoc.element.ajv.ValidationError">
+        function <span class="apidocSignatureSpan">ajv.</span>ValidationError
+        <span class="apidocSignatureSpan">(errors)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ValidationError(errors) {
+  this.message = &#x27;validation failed&#x27;;
+  this.errors = errors;
+  this.ajv = this.validation = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+You can define custom formats and keywords that perform validation asyncronously by accessing database or some service. You should
+ add `async: true` in the keyword or format defnition (see [addFormat](#api-addformat), [addKeyword](#api-addkeyword) and [Defining
+ custom keywords](#defining-custom-keywords)).
+
+If your schema uses asynchronous formats/keywords or refers to some schema that contains them it should have `&#x22;$async&#x22;:
+true` keyword so that Ajv can compile it correctly. If asynchronous format/keyword or reference to asynchronous schema is used in
+ the schema without `$async` keyword Ajv will throw an exception during schema compilation.
+
+__Please note__: all asynchronous subschemas that are referenced from the current or other schemas should have `&#x22;$async&#x22
+;: true` keyword as well, otherwise the schema compilation will fail.
+
+Validation function for an asynchronous custom format/keyword should return a promise that resolves to `true` or `false` (or rejects
+ with `new Ajv.<span class="apidocCodeKeywordSpan">ValidationError</span>(errors)` if you want to return custom errors from the
+keyword function). Ajv compiles asynchronous schemas to either [generator function](https://developer.mozilla.org/en-US/docs/Web
+/JavaScript/Reference/Statements/function*) (default) that can be optionally transpiled with [regenerator](https://github.com/facebook
+/regenerator) or to [es7 async function](http://tc39.github.io/ecmascript-asyncawait/) that can be transpiled with [nodent](https
+://github.com/MatAtBread/nodent) or with regenerator as well. You can also supply any other transpiler as a function. See [Options
+](#options).
+
+The compiled validation function has `$async: true` property (if the schema is asynchronous), so you can differentiate these functions
+ if you are using both syncronous and asynchronous schemas.
+
+If you are using generators, the compiled validation function can be either wrapped with [co](https://github.com/tj/co) (default
+) or returned as generator function, that can be used directly, e.g. in [koa](http://koajs.com/) 1.0. `co` is a small library, it
+ is included in Ajv (both as npm dependency and in the browser bundle).
+
+Generator functions are currently supported in Chrome, Firefox and node.js (0.11+); if you are using Ajv in other browsers or in
+ older versions of node.js you should use one of available transpiling options. All provided async modes use global Promise class
+. If your platform does not have Promise you should use a polyfill that defines it.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.cache" id="apidoc.element.ajv.cache">
+        function <span class="apidocSignatureSpan">ajv.</span>cache
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Cache() {
+  this._cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ajv.ValidationError" id="apidoc.module.ajv.ValidationError">module ajv.ValidationError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.ValidationError.ValidationError" id="apidoc.element.ajv.ValidationError.ValidationError">
+        function <span class="apidocSignatureSpan">ajv.</span>ValidationError
+        <span class="apidocSignatureSpan">(errors)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ValidationError(errors) {
+  this.message = &#x27;validation failed&#x27;;
+  this.errors = errors;
+  this.ajv = this.validation = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+You can define custom formats and keywords that perform validation asyncronously by accessing database or some service. You should
+ add `async: true` in the keyword or format defnition (see [addFormat](#api-addformat), [addKeyword](#api-addkeyword) and [Defining
+ custom keywords](#defining-custom-keywords)).
+
+If your schema uses asynchronous formats/keywords or refers to some schema that contains them it should have `&#x22;$async&#x22;:
+true` keyword so that Ajv can compile it correctly. If asynchronous format/keyword or reference to asynchronous schema is used in
+ the schema without `$async` keyword Ajv will throw an exception during schema compilation.
+
+__Please note__: all asynchronous subschemas that are referenced from the current or other schemas should have `&#x22;$async&#x22
+;: true` keyword as well, otherwise the schema compilation will fail.
+
+Validation function for an asynchronous custom format/keyword should return a promise that resolves to `true` or `false` (or rejects
+ with `new Ajv.<span class="apidocCodeKeywordSpan">ValidationError</span>(errors)` if you want to return custom errors from the
+keyword function). Ajv compiles asynchronous schemas to either [generator function](https://developer.mozilla.org/en-US/docs/Web
+/JavaScript/Reference/Statements/function*) (default) that can be optionally transpiled with [regenerator](https://github.com/facebook
+/regenerator) or to [es7 async function](http://tc39.github.io/ecmascript-asyncawait/) that can be transpiled with [nodent](https
+://github.com/MatAtBread/nodent) or with regenerator as well. You can also supply any other transpiler as a function. See [Options
+](#options).
+
+The compiled validation function has `$async: true` property (if the schema is asynchronous), so you can differentiate these functions
+ if you are using both syncronous and asynchronous schemas.
+
+If you are using generators, the compiled validation function can be either wrapped with [co](https://github.com/tj/co) (default
+) or returned as generator function, that can be used directly, e.g. in [koa](http://koajs.com/) 1.0. `co` is a small library, it
+ is included in Ajv (both as npm dependency and in the browser bundle).
+
+Generator functions are currently supported in Chrome, Firefox and node.js (0.11+); if you are using Ajv in other browsers or in
+ older versions of node.js you should use one of available transpiling options. All provided async modes use global Promise class
+. If your platform does not have Promise you should use a polyfill that defines it.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ajv.ValidationError.prototype" id="apidoc.module.ajv.ValidationError.prototype">module ajv.ValidationError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.ValidationError.prototype.constructor" id="apidoc.element.ajv.ValidationError.prototype.constructor">
+        function <span class="apidocSignatureSpan">ajv.ValidationError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(errors)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ValidationError(errors) {
+  this.message = &#x27;validation failed&#x27;;
+  this.errors = errors;
+  this.ajv = this.validation = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ajv.async" id="apidoc.module.ajv.async">module ajv.async</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.async.compile" id="apidoc.element.ajv.async.compile">
+        function <span class="apidocSignatureSpan">ajv.async.</span>compile
+        <span class="apidocSignatureSpan">(schema, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compileAsync(schema, callback) {
+<span class="apidocCodeCommentSpan">  /* eslint no-shadow: 0 */
+</span>  /* jshint validthis: true */
+  var schemaObj;
+  var self = this;
+  try {
+    schemaObj = this._addSchema(schema);
+  } catch(e) {
+    setTimeout(function() { callback(e); });
+    return;
+  }
+  if (schemaObj.validate) {
+    setTimeout(function() { callback(null, schemaObj.validate); });
+  } else {
+    if (typeof this._opts.loadSchema != &#x27;function&#x27;)
+      throw new Error(&#x27;options.loadSchema should be a function&#x27;);
+    _compileAsync(schema, callback, true);
+  }
+
+
+  function _compileAsync(schema, callback, firstCall) {
+    var validate;
+    try { validate = self.compile(schema); }
+    catch(e) {
+      if (e.missingSchema) loadMissingSchema(e);
+      else deferCallback(e);
+      return;
+    }
+    deferCallback(null, validate);
+
+    function loadMissingSchema(e) {
+      var ref = e.missingSchema;
+      if (self._refs[ref] || self._schemas[ref])
+        return callback(new Error(&#x27;Schema &#x27; + ref + &#x27; is loaded but &#x27; + e.missingRef + &#x27; cannot be resolved&#x27;));
+      var _callbacks = self._loadingSchemas[ref];
+      if (_callbacks) {
+        if (typeof _callbacks == &#x27;function&#x27;)
+          self._loadingSchemas[ref] = [_callbacks, schemaLoaded];
+        else
+          _callbacks[_callbacks.length] = schemaLoaded;
+      } else {
+        self._loadingSchemas[ref] = schemaLoaded;
+        self._opts.loadSchema(ref, function (err, sch) {
+          var _callbacks = self._loadingSchemas[ref];
+          delete self._loadingSchemas[ref];
+          if (typeof _callbacks == &#x27;function&#x27;) {
+            _callbacks(err, sch);
+          } else {
+            for (var i=0; i&#x3c;_callbacks.length; i++)
+              _callbacks[i](err, sch);
+          }
+        });
+      }
+
+      function schemaLoaded(err, sch) {
+        if (err) return callback(err);
+        if (!(self._refs[ref] || self._schemas[ref])) {
+          try {
+            self.addSchema(sch, ref);
+          } catch(e) {
+            callback(e);
+            return;
+          }
+        }
+        _compileAsync(schema, callback);
+      }
+    }
+
+    function deferCallback(err, validate) {
+      if (firstCall) setTimeout(function() { callback(err, validate); });
+      else return callback(err, validate);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+The fastest validation call:
+
+```javascript
+var Ajv = require(&#x27;ajv&#x27;);
+var ajv = new Ajv(); // options can be passed, e.g. {allErrors: true}
+var validate = ajv.<span class="apidocCodeKeywordSpan">compile</span>(schema);
+var valid = validate(data);
+if (!valid) console.log(validate.errors);
+```
+
+or with less code
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.async.setup" id="apidoc.element.ajv.async.setup">
+        function <span class="apidocSignatureSpan">ajv.async.</span>setup
+        <span class="apidocSignatureSpan">(opts, required)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setupAsync(opts, required) {
+  if (required !== false) required = true;
+  var async = opts.async
+    , transpile = opts.transpile
+    , check;
+
+  switch (typeof transpile) {
+    case &#x27;string&#x27;:
+      var get = TRANSPILE[transpile];
+      if (!get) throw new Error(&#x27;bad transpiler: &#x27; + transpile);
+      return (opts._transpileFunc = get(opts, required));
+    case &#x27;undefined&#x27;:
+    case &#x27;boolean&#x27;:
+      if (typeof async == &#x27;string&#x27;) {
+        check = ASYNC[async];
+        if (!check) throw new Error(&#x27;bad async mode: &#x27; + async);
+        return (opts.transpile = check(opts, required));
+      }
+
+      for (var i=0; i&#x3c;MODES.length; i++) {
+        var _opts = MODES[i];
+        if (setupAsync(_opts, false)) {
+          util.copy(_opts, opts);
+          return opts.transpile;
+        }
+      }
+<span class="apidocCodeCommentSpan">      /* istanbul ignore next */
+</span>      throw new Error(&#x27;generators, nodent and regenerator are not available&#x27;);
+    case &#x27;function&#x27;:
+      return (opts._transpileFunc = opts.transpile);
+    default:
+      throw new Error(&#x27;bad transpiler: &#x27; + transpile);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ajv.cache" id="apidoc.module.ajv.cache">module ajv.cache</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.cache.cache" id="apidoc.element.ajv.cache.cache">
+        function <span class="apidocSignatureSpan">ajv.</span>cache
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Cache() {
+  this._cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ajv.cache.prototype" id="apidoc.module.ajv.cache.prototype">module ajv.cache.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.cache.prototype.clear" id="apidoc.element.ajv.cache.prototype.clear">
+        function <span class="apidocSignatureSpan">ajv.cache.prototype.</span>clear
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Cache_clear() {
+  this._cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.cache.prototype.del" id="apidoc.element.ajv.cache.prototype.del">
+        function <span class="apidocSignatureSpan">ajv.cache.prototype.</span>del
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Cache_del(key) {
+  delete this._cache[key];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.cache.prototype.get" id="apidoc.element.ajv.cache.prototype.get">
+        function <span class="apidocSignatureSpan">ajv.cache.prototype.</span>get
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Cache_get(key) {
+  return this._cache[key];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.cache.prototype.put" id="apidoc.element.ajv.cache.prototype.put">
+        function <span class="apidocSignatureSpan">ajv.cache.prototype.</span>put
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Cache_put(key, value) {
+  this._cache[key] = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ajv.keyword" id="apidoc.module.ajv.keyword">module ajv.keyword</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.keyword.add" id="apidoc.element.ajv.keyword.add">
+        function <span class="apidocSignatureSpan">ajv.keyword.</span>add
+        <span class="apidocSignatureSpan">(keyword, definition)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addKeyword(keyword, definition) {
+<span class="apidocCodeCommentSpan">  /* jshint validthis: true */
+</span>  /* eslint no-shadow: 0 */
+  var RULES = this.RULES;
+
+  if (RULES.keywords[keyword])
+    throw new Error(&#x27;Keyword &#x27; + keyword + &#x27; is already defined&#x27;);
+
+  if (!IDENTIFIER.test(keyword))
+    throw new Error(&#x27;Keyword &#x27; + keyword + &#x27; is not a valid identifier&#x27;);
+
+  if (definition) {
+    if (definition.macro &#x26;&#x26; definition.valid !== undefined)
+      throw new Error(&#x27;&#x22;valid&#x22; option cannot be used with macro keywords&#x27;);
+
+    var dataType = definition.type;
+    if (Array.isArray(dataType)) {
+      var i, len = dataType.length;
+      for (i=0; i&#x3c;len; i++) checkDataType(dataType[i]);
+      for (i=0; i&#x3c;len; i++) _addRule(keyword, dataType[i], definition);
+    } else {
+      if (dataType) checkDataType(dataType);
+      _addRule(keyword, dataType, definition);
+    }
+
+    var $data = definition.$data === true &#x26;&#x26; this._opts.v5;
+    if ($data &#x26;&#x26; !definition.validate)
+      throw new Error(&#x27;$data support: &#x22;validate&#x22; function is not defined&#x27;);
+
+    var metaSchema = definition.metaSchema;
+    if (metaSchema) {
+      if ($data) {
+        metaSchema = {
+          anyOf: [
+            metaSchema,
+            { &#x27;$ref&#x27;: &#x27;https://raw.githubusercontent.com/epoberezkin/ajv/master/lib/refs/json-schema-v5.json#/definitions/$data&#x27; }
+          ]
+        };
+      }
+      definition.validateSchema = this.compile(metaSchema, true);
+    }
+  }
+
+  RULES.keywords[keyword] = RULES.all[keyword] = true;
+
+
+  function _addRule(keyword, dataType, definition) {
+    var ruleGroup;
+    for (var i=0; i&#x3c;RULES.length; i++) {
+      var rg = RULES[i];
+      if (rg.type == dataType) {
+        ruleGroup = rg;
+        break;
+      }
+    }
+
+    if (!ruleGroup) {
+      ruleGroup = { type: dataType, rules: [] };
+      RULES.push(ruleGroup);
+    }
+
+    var rule = {
+      keyword: keyword,
+      definition: definition,
+      custom: true,
+      code: customRuleCode
+    };
+    ruleGroup.rules.push(rule);
+    RULES.custom[keyword] = rule;
+  }
+
+
+  function checkDataType(dataType) {
+    if (!RULES.types[dataType]) throw new Error(&#x27;Unknown type &#x27; + dataType);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.keyword.get" id="apidoc.element.ajv.keyword.get">
+        function <span class="apidocSignatureSpan">ajv.keyword.</span>get
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getKeyword(keyword) {
+<span class="apidocCodeCommentSpan">  /* jshint validthis: true */
+</span>  var rule = this.RULES.custom[keyword];
+  return rule ? rule.definition : this.RULES.keywords[keyword] || false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.keyword.remove" id="apidoc.element.ajv.keyword.remove">
+        function <span class="apidocSignatureSpan">ajv.keyword.</span>remove
+        <span class="apidocSignatureSpan">(keyword)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function removeKeyword(keyword) {
+<span class="apidocCodeCommentSpan">  /* jshint validthis: true */
+</span>  var RULES = this.RULES;
+  delete RULES.keywords[keyword];
+  delete RULES.all[keyword];
+  delete RULES.custom[keyword];
+  for (var i=0; i&#x3c;RULES.length; i++) {
+    var rules = RULES[i].rules;
+    for (var j=0; j&#x3c;rules.length; j++) {
+      if (rules[j].keyword == keyword) {
+        rules.splice(j, 1);
+        break;
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ajv.v5" id="apidoc.module.ajv.v5">module ajv.v5</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ajv.v5.enable" id="apidoc.element.ajv.v5.enable">
+        function <span class="apidocSignatureSpan">ajv.v5.</span>enable
+        <span class="apidocSignatureSpan">(ajv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function enableV5(ajv) {
+  var inlineFunctions = {
+    &#x27;switch&#x27;: require(&#x27;./dotjs/switch&#x27;),
+    &#x27;constant&#x27;: require(&#x27;./dotjs/constant&#x27;),
+    &#x27;_formatLimit&#x27;: require(&#x27;./dotjs/_formatLimit&#x27;),
+    &#x27;patternRequired&#x27;: require(&#x27;./dotjs/patternRequired&#x27;)
+  };
+
+  if (ajv._opts.meta !== false) {
+    var metaSchema = require(&#x27;./refs/json-schema-v5.json&#x27;);
+    ajv.addMetaSchema(metaSchema, META_SCHEMA_ID);
+  }
+  _addKeyword(&#x27;constant&#x27;);
+  ajv.addKeyword(&#x27;contains&#x27;, { type: &#x27;array&#x27;, macro: containsMacro });
+
+  _addKeyword(&#x27;formatMaximum&#x27;, &#x27;string&#x27;, inlineFunctions._formatLimit);
+  _addKeyword(&#x27;formatMinimum&#x27;, &#x27;string&#x27;, inlineFunctions._formatLimit);
+  ajv.addKeyword(&#x27;formatExclusiveMaximum&#x27;);
+  ajv.addKeyword(&#x27;formatExclusiveMinimum&#x27;);
+
+  ajv.addKeyword(&#x27;patternGroups&#x27;); // implemented in properties.jst
+  _addKeyword(&#x27;patternRequired&#x27;, &#x27;object&#x27;);
+  _addKeyword(&#x27;switch&#x27;);
+
+
+  function _addKeyword(keyword, types, inlineFunc) {
+    var definition = {
+      inline: inlineFunc || inlineFunctions[keyword],
+      statements: true,
+      errors: &#x27;full&#x27;
+    };
+    if (types) definition.type = types;
+    ajv.addKeyword(keyword, definition);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
